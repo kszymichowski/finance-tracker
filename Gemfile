@@ -25,6 +25,9 @@ gem 'devise-bootstrap-views', '~> 1.0'
 # API for downloading stock data
 gem 'iex-ruby-client'
 
+#icons
+gem "font-awesome-rails"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
