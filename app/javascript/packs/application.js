@@ -4,6 +4,10 @@
 // that code so it'll be compiled.
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require popper
+//= require_tree .  
+//= require bootstrap-sprockets
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
@@ -14,3 +18,5 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+

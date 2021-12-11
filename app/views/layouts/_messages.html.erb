@@ -1,22 +1,14 @@
 <% if notice %>
     <div class="alert alert-success">
-        <a href="#" data-dismiss="alert" class="close">×</a>
-        <ul>
-            <li>
-                <%= notice %>
-            </li>
-        </ul>
+        <%= notice %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% end %>
 
 <% if alert %>
     <div class="alert alert-danger">
-        <a href="#" data-dismiss="alert" class="close">×</a>
-        <ul>
-            <li>
-                <%= alert %>
-            </li>
-        </ul>
+        <%= alert %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% end %>
 <% flash.clear %>
