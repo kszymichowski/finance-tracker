@@ -21,7 +21,7 @@
                         <td scope="row">
                             <%= stock.last_price %>
                         </td>
-                        <td scope="row">Action placeholder</td>
+                        <td scope="row"><%= link_to 'remove', user_stock_path(stock), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-warning" %></td>
                     </tr>
                     <% end %>
             </tbody>
