@@ -54,10 +54,18 @@ class User < ApplicationRecord
   end
 
   def self.email_matches(param)
-    matches("email_name", param)
+    matches("email", param)
   end
 
   def self.matches(field_name, param)
     User.where("#{field_name} like ?", "%#{param}%")
+  end
+
+  def except_current_user(users)
+    users.reject {|user| user.id == self.id }
+  end
+
+  def not_friends_with?(id)
+    !self.friends.where(id: id).exists?
   end
 end

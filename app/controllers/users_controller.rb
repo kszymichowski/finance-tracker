@@ -9,9 +9,9 @@ class UsersController < ApplicationController
 
     def search
         if params[:friend].present?
-            @friend = User.where(email: params[:friend]).first
-            # @friend = params[:friend]
-            if @friend
+            @user_friends = User.search(params[:friend])
+            @user_friends = current_user.except_current_user(@user_friends)
+            if @user_friends
                 respond_to do |format|
                     format.js { render partial: 'users/friend_result' }
                 end
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
             end
         else
              respond_to do |format|
-                    flash.now[:alert] = "No email was entered"
+                    flash.now[:alert] = "Please enter a name or email"
                     format.js { render partial: 'users/friend_result' }
              end
         end  
